@@ -1,0 +1,12 @@
+@import '../../styles/core.scss';
+
+.Crypto {
+	textarea {
+		color: $color-text;
+		background-color: white;
+	}
+	textarea[disabled] {
+		color: $color-text;
+		background-color: #fdfdfd;
+	}
+}

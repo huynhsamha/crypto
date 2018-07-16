@@ -1,0 +1,36 @@
+root = true
+
+[**]
+end_of_line = lf
+insert_final_newline = true
+
+[**.{js,json,jsx}]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+quote_type = single
+curly_bracket_next_line = false
+spaces_around_operators = true
+space_after_control_statements = true
+space_after_anonymous_functions = true
+spaces_in_brackets = false
+
+[**.{yml,css,scss,sass}]
+trim_trailing_whitespace = true
+indent_style = tab
+indent_size = 2
+
+[**.{html,ejs}]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[**.md]
+indent_style = tab
+
+[Makefile]
+indent_style = tab
+
+[{package, bower}.json]
+indent_style = space
+indent_size = 2

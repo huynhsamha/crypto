@@ -1,0 +1,25 @@
+@import '../../styles/core.scss';
+
+.Menu {
+	.title {
+		margin-bottom: 20px;
+	}
+	.group-algo {
+		h6 {
+			margin-top: 28px;
+			margin-bottom: 12px;
+		}
+		.list-algo {
+			.algo {
+				margin: 5px;
+				span {
+					margin-left: 5px;
+					transition-duration: 0.2s
+				}
+				&:hover, &:focus {
+					span { margin-left: 15px }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+@import './_core.scss';
+@import './_bootstrap.scss';
+
+html, body {
+    font-size: $font-size-base;
+    font-family: $font-family;
+    color: $color-text;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+    &:hover {
+        color: lighten($color-primary, 15%);
+        text-decoration: none;
+    }
+}
+
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $color-scrollbar;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: $color-scrollbar;
+}

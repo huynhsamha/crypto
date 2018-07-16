@@ -1,0 +1,17 @@
+@import '../../styles/_core.scss';
+
+.Header {
+	margin-bottom: 30px;
+	.navbar {
+		background-color: $color-primary !important;
+		.navbar-nav {
+			.nav-item {
+				&.active {
+					.nav-link {
+						color: white !important;
+					}
+				}
+			}
+		}
+	}
+}
