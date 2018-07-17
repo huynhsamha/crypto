@@ -1,13 +1,17 @@
 @import '../../styles/core.scss';
 
 .Footer {
-	text-align: center;
-	padding: 30px 0px;
-	margin-top: 80px;
+	height: $height-footer;
 	background-color: darken($color-primary, 15%);
 	color: $color-light;
 	font-size: 0.9em;
+	display: table;
+	width: 100%;
 	a {
 		color: $color-light !important;
+	}
+	.Footer-content {
+		display: table-cell;
+		vertical-align: middle;
 	}
 }

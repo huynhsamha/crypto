@@ -1,5 +1,82 @@
 @import '../../styles/core.scss';
 
 .Contact {
+	min-height: calc(100vh - #{$height-header} - #{$height-footer});
+	ul {
+		list-style: none;
+		padding: inherit;
+		li {
+			margin: 12px;
+			span {
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				position: relative;
+				cursor: pointer;
+				transition-duration: 0.3s;
+				&:hover {
+					transform: rotate(360deg);
+					box-shadow: 0px 0px 10px 8px #e0e0e0;
+				}
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+					color: inherit;
+				}
+				i {
+					position: absolute;
+					top: 50%; left: 50%;
+					transform: translate(-50%, -50%);
+				}
+				&.ic-facebook  {
+					color: $color-facebook;
+					border: 2px solid $color-facebook;
+				}
+				&.ic-google  {
+					color: $color-google;
+					border: 2px solid $color-google;
+				}
+				&.ic-github  {
+					color: $color-github;
+					border: 2px solid $color-github;
+				}
+				&.ic-linkedin  {
+					color: $color-linkedin;
+					border: 2px solid $color-linkedin;
+				}
+				&.ic-twitter  {
+					color: $color-twitter;
+					border: 2px solid $color-twitter;
+				}
+				&.ic-stack-overflow  {
+					color: $color-stack-overflow;
+					border: 2px solid $color-stack-overflow;
+				}
+			}
+		}
+	}
+}
 
+
+@media only screen and (max-width: 576px) {
+	.Contact {
+		ul {
+			li {
+				span {
+					width: 35px;
+					height: 35px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.Contact {
+		ul {
+			display: none !important;
+		}
+	}
 }

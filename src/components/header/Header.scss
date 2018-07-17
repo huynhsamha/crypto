@@ -1,8 +1,10 @@
 @import '../../styles/_core.scss';
 
 .Header {
-	margin-bottom: 30px;
+	height: $height-header;
+	z-index: 999;
 	.navbar {
+		z-index: 999;
 		background-color: $color-primary !important;
 		.navbar-nav {
 			.nav-item {

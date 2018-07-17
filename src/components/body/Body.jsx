@@ -8,6 +8,12 @@ import Home from '../home/Home';
 import Crypto from '../crypto/Crypto';
 import Contact from '../contact/Contact';
 
+export const PageNotFound = () => (
+  <div className="Page-not-found text-center">
+    <img src="/img/404.jpg" alt="Page not found" />
+  </div>
+);
+
 class Body extends Component {
 
   render() {
@@ -17,7 +23,7 @@ class Body extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/contact" component={Contact} />
           <Route path="/algorithm" component={Crypto} />
-          <Route render={() => <div>404 Page Not Found</div>} />
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     );

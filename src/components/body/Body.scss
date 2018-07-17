@@ -1,5 +1,19 @@
-@import '../../styles/core.scss';
+@import '../../styles/_core.scss';
 
 .Body {
+	.Page-not-found {
+		min-height: calc(100vh - #{$height-header} - #{$height-footer});
+		img {
+			width: 60%;
+			margin-top: 20px;
+		}
+	}
+}
 
+@media only screen and (max-width: 992px) {
+	.Body {
+		.Page-not-found {
+			img {width: 90%;}
+		}
+	}
 }
