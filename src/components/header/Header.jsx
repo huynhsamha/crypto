@@ -50,7 +50,7 @@ class Header extends Component {
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="//github.com/huynhsamha/crypto" target="_blank" rel="noopener noreferrer">Github</a>
+                <a className="nav-link" href="//github.com/huynhsamha/crypto" target="_blank" rel="noopener noreferrer">Available on GitHub</a>
               </li>
             </ul>
           </div>

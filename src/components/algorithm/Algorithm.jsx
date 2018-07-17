@@ -55,7 +55,7 @@ class Algorithm extends Component {
     }
 
     return (
-      <div className="Algorithm col-12 col-lg-9 col-md-7">
+      <div className="Algorithm">
         <div className="form-group row">
           <h3>{algo.name.toUpperCase()}{algo.detail && ` - ${algo.detail}`}</h3>
         </div>

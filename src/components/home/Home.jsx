@@ -14,7 +14,9 @@ class Home extends Component {
     return (
       <div className="Home container">
         <div className="row">
-          Home Page
+          <div className="col-12">
+            <h2 className="mb-3">Home Page</h2>
+          </div>
         </div>
       </div>
     );

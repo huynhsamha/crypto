@@ -35,19 +35,21 @@ class Crypto extends Component {
           <div className="col-12 col-lg-3 col-md-5">
             <Menu match={match} />
           </div>
-          <Switch>
-            {/* handle default algo for route / */}
-            <Route exact path={match.path} component={() => <Algorithm algo={defaultAlgo} />} />
+          <div className="col-12 col-lg-9 col-md-7">
+            <Switch>
+              {/* handle default algo for route / */}
+              <Route exact path={match.path} component={() => <Algorithm algo={defaultAlgo} />} />
 
-            {algorithms.map(groupAlgo => groupAlgo.algorithms.map(algo => (
-              <Route
-                key={algo.name} exact path={`${match.path}/${algo.name}`}
-                component={() => <Algorithm algo={algo} />}
-              />
-            )))}
-
-            <Route component={NotFound} />
-          </Switch>
+              {algorithms.map(groupAlgo => groupAlgo.algorithms.map(algo => (
+                <Route
+                  key={algo.name} exact path={`${match.path}/${algo.name}`}
+                  component={() => <Algorithm algo={algo} />}
+                />
+              )))}
+              {/* no match route */}
+              <Route component={NotFound} />
+            </Switch>
+          </div>
         </div>
       </div>
     );
