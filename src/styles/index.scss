@@ -4,7 +4,11 @@
 html, body {
     font-size: $font-size-base;
     font-family: $font-family;
-    color: $color-text;
+	}
+
+body {
+	color: $color-text;
+	background-image: url('/img/subdots.png');
 }
 
 a {

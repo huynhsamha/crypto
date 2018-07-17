@@ -14,21 +14,24 @@ class Menu extends Component {
     return (
       <div className="Menu">
         <h3 className="title">Algorithms</h3>
-        {algorithms.map(groupAlgo => (
-          <div className="group-algo" key={groupAlgo.title}>
-            <h6>{groupAlgo.title}</h6>
-            {groupAlgo.algorithms.map(algo => (
-              <div className="list-algo" key={algo.name}>
-                <Link to={`${match.path}/${algo.name}`}>
-                  <div className="algo">
-                    <i className="fa fa-angle-double-right" />
-                    <span>{algo.name}</span>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        ))}
+        <div className="menu-detail">
+          {algorithms.map(groupAlgo => (
+            <div className="group-algo" key={groupAlgo.title}>
+              <h6>{groupAlgo.title}</h6>
+              {groupAlgo.algorithms.map(algo => (
+                <div className="list-algo" key={algo.name}>
+                  <Link to={`${match.path}/${algo.name}`}>
+                    <div className="algo">
+                      <i className="fa fa-angle-double-right" />
+                      <span>{algo.name}</span>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
       </div>
     );
   }

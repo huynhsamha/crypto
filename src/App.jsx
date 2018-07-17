@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Body from './components/body/Body';
+import Alert from './components/alert/Alert';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <Header />
             <Body />
             <Footer />
+            <Alert />
           </div>
         </Router>
       </div>

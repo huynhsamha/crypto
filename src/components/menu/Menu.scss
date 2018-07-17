@@ -1,13 +1,23 @@
 @import '../../styles/core.scss';
 
 .Menu {
+	margin-bottom: 35px;
+	.menu-detail {
+		// background-color: white;
+		// height: calc(100vh - 200px);
+		// overflow: auto;
+		// padding: 15px 20px 5px;
+	}
 	.title {
-		margin-bottom: 20px;
+		margin-bottom: 25px;
 	}
 	.group-algo {
+		margin-bottom: 25px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
 		h6 {
-			margin-top: 28px;
-			margin-bottom: 12px;
+			margin-top: 5px;
 		}
 		.list-algo {
 			.algo {

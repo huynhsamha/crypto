@@ -1,5 +1,22 @@
 @import '../../styles/core.scss';
 
 .Algorithm {
-
+	textarea {
+		min-height: 120px;
+	}
+	.btn-copy {
+		position: absolute;
+		right: 9px;
+		bottom: 9px;
+		font-size: 0.8em;
+		background-color: #afafafd7;
+		outline: none;
+		border: none;
+		color: $color-dark;
+		transition-duration: 0.3s;
+		&:active, &:focus, &:hover {
+			background-color: #d3d3d3 !important;
+			color: $color-dark;
+		}
+	}
 }

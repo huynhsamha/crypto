@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import cryptoEncoderUtf8 from 'crypto-js/enc-utf8';
+
+import * as actions from '../../redux/actions';
+
+import './Algorithm.css';
 
 class Algorithm extends Component {
 
@@ -15,7 +21,12 @@ class Algorithm extends Component {
     };
 
     const { algo } = this.props;
-    document.title = algo.name.toUpperCase();
+    document.title = algo.name.toUpperCase() + (algo.detail ? ` - ${algo.detail}` : '');
+  }
+
+  handleOnCopy = () => {
+    const { showAlert } = this.props;
+    showAlert('Copied to clipboard');
   }
 
   render() {
@@ -46,7 +57,7 @@ class Algorithm extends Component {
     return (
       <div className="Algorithm col-12 col-lg-9 col-md-7">
         <div className="form-group row">
-          <h3>{algo.name.toUpperCase()}</h3>
+          <h3>{algo.name.toUpperCase()}{algo.detail && ` - ${algo.detail}`}</h3>
         </div>
         {/* Data Input */}
         <div className="form-group row">
@@ -71,12 +82,20 @@ class Algorithm extends Component {
         )}
 
         {/* Result */}
-        <div className="form-group row">
+        <div className="form-group row position-relative">
           <label htmlFor="js-result">{algo.decrypt && 'Encrypted'} Result</label>
           <textarea
             className="form-control" rows="4" id="js-result" disabled
             value={encryptValue}
           />
+          <CopyToClipboard
+            text={encryptValue}
+            onCopy={this.handleOnCopy}
+          >
+            <button className="btn btn-primary btn-sm position-absolute btn-copy" type="button">
+              Copy <i className="fa fa-copy" />
+            </button>
+          </CopyToClipboard>
         </div>
 
         {/* Encryption & Decryption */}
@@ -106,7 +125,14 @@ class Algorithm extends Component {
 
 
 Algorithm.propTypes = {
-  algo: PropTypes.object.isRequired
+  algo: PropTypes.object.isRequired,
+  showAlert: PropTypes.func.isRequired
 };
 
-export default Algorithm;
+const mapDispatchToProps = dispatch => ({
+  showAlert: (message) => {
+    dispatch(actions.showAlert(message));
+  }
+});
+
+export default connect(null, mapDispatchToProps)(Algorithm);

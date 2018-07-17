@@ -13,14 +13,14 @@ class Footer extends Component {
             </div>
             <div className="py-1">
               <span> Created by {' '}
-                <a className="jsc-link" href="//github.com/huynhsamha" target="_blank">huynhsamha {' '}
+                <a className="jsc-link" href="//github.com/huynhsamha" target="_blank" rel="noopener noreferrer">huynhsamha {' '}
                   <i className="fa fa-external-link" />
                 </a>
               </span>
               <span>
                 {'. '}
               Available on {' '}
-                <a className="jsc-link" href="//github.com/huynhsamha/crypto" target="_blank">Github {' '}
+                <a className="jsc-link" href="//github.com/huynhsamha/crypto" target="_blank" rel="noopener noreferrer">Github {' '}
                   <i className="fa fa-github" />
                 </a>
               </span>
