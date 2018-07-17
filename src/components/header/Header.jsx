@@ -30,7 +30,10 @@ class Header extends Component {
     return (
       <div className="Header">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link to="/" className="navbar-brand">Cryptography</Link>
+          <Link to="/" className="navbar-brand">
+            <img src="/favicon.ico" alt="" className="d-inline-block align-top mr-2" width="36" height="36" />
+            Cryptography
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-supported-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
