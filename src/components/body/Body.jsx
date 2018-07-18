@@ -13,7 +13,6 @@ export const PageNotFound = () => (
     <img src="/img/404.jpg" alt="Page not found" />
   </div>
 );
-
 class Body extends Component {
 
   render() {

@@ -15,6 +15,16 @@ const NotFound = () => (
   </div>
 );
 
+const ShareTwitter = () => (
+  <a
+    className="twitter-share-button"
+    href="https://twitter.com/intent/tweet"
+    data-size="large"
+  >
+    <i className="fa fa-twitter" />
+  </a>
+);
+
 class Crypto extends Component {
 
   constructor(props) {
@@ -49,6 +59,7 @@ class Crypto extends Component {
               {/* no match route */}
               <Route component={NotFound} />
             </Switch>
+            {/* <ShareTwitter /> */}
           </div>
         </div>
       </div>
