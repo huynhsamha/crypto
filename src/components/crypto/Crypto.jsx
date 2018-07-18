@@ -15,15 +15,46 @@ const NotFound = () => (
   </div>
 );
 
-const ShareTwitter = () => (
-  <a
-    className="twitter-share-button"
-    href="https://twitter.com/intent/tweet"
-    data-size="large"
-  >
-    <i className="fa fa-twitter" />
-  </a>
-);
+const ShareTwitter = () => {
+  const text = `Cryptography Algorithm ${document.title}`;
+  const url = window.location.href;
+  const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+
+  const openPopup = (url) => {
+    const height = 500;
+    const width = 500;
+    const top = window.innerHeight - height;
+    const left = window.innerHeight - width;
+
+    const newWindow = window.open(url, '_blank',
+      `height=${height}, width=${width},
+      top=${top}, left=${left},
+      location=yes, scrollbars=yes, status=yes`);
+  };
+
+  return (
+    <button
+      className="twitter-share-button" type="button"
+      onClick={() => openPopup(shareUrl)}
+      title="Share on Twitter"
+    >
+      <i className="fa fa-twitter" /> Tweet
+    </button>
+  );
+};
+
+const ShareFacebook = () => {
+  function fbs_click() {
+    const u = window.location.href;
+    const t = document.title;
+    window.open(`http://www.facebook.com/sharer.php?u=${encodeURIComponent(u)}&t=${encodeURIComponent(t)}`, 'sharer', 'toolbar=0,status=0,width=626,height=436');
+    return false;
+  }
+
+  return (
+    <a href="http://www.facebook.com/share.php?u=<url>" onClick="return fbs_click()" target="_blank"><img src="ADD_IMAGE_URL_HERE" alt="Share on Facebook" /></a>
+  );
+};
 
 class Crypto extends Component {
 
@@ -59,7 +90,9 @@ class Crypto extends Component {
               {/* no match route */}
               <Route component={NotFound} />
             </Switch>
-            {/* <ShareTwitter /> */}
+
+            <ShareTwitter />
+            <ShareFacebook />
           </div>
         </div>
       </div>

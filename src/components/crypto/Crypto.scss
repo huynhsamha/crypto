@@ -1,6 +1,7 @@
 @import '../../styles/core.scss';
 
 .Crypto {
+	margin-bottom: 40px;
 	textarea {
 		color: $color-text;
 		background-color: white;
@@ -9,5 +10,20 @@
 		color: $color-text;
 		background-color: #fdfdfd;
 	}
-	margin-bottom: 40px;
+	.twitter-share-button {
+		background-color: $color-twitter;
+		color: white;
+		padding: 8px 16px;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		transition-duration: 0.2s;
+		font-size: 0.9em;
+		&:hover {
+			background-color: lighten($color-twitter, 10%) !important;
+		}
+		i {
+			margin-right: 3px;
+		}
+	}
 }

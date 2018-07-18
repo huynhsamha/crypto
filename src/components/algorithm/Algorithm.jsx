@@ -11,6 +11,7 @@ import * as actions from '../../redux/actions';
 
 import './Algorithm.css';
 
+
 class Algorithm extends Component {
 
   constructor(props) {
@@ -112,7 +113,7 @@ class Algorithm extends Component {
               onCopy={this.handleOnCopy}
             >
               <button className="btn btn-primary btn-sm position-absolute btn-copy" type="button">
-              Copy <i className="fa fa-copy" />
+                Copy <i className="fa fa-copy" />
               </button>
             </CopyToClipboard>
           </Fade>
