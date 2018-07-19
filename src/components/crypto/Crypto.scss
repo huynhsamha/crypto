@@ -10,20 +10,18 @@
 		color: $color-text;
 		background-color: #fdfdfd;
 	}
-	.twitter-share-button {
-		background-color: $color-twitter;
-		color: white;
-		padding: 8px 16px;
-		outline: none;
-		border: none;
-		cursor: pointer;
-		transition-duration: 0.2s;
-		font-size: 0.9em;
-		&:hover {
-			background-color: lighten($color-twitter, 10%) !important;
-		}
-		i {
-			margin-right: 3px;
+	.tool-share-buttons {
+		margin-top: 50px;
+		text-align: center;
+		.share-button {
+			display: inline-block;
+			margin: 8px;
+			cursor: pointer;
+			outline: none;
+			transition: cubic-bezier(0.075, 0.82, 0.165, 1)  0.2s;
+			&:hover {
+				opacity: 0.8;
+			}
 		}
 	}
 }

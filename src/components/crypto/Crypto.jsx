@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
+import {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  PinterestShareButton,
+
+  FacebookIcon,
+  TwitterIcon,
+  GooglePlusIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  TelegramIcon
+} from 'react-share';
+import Fade from 'react-reveal/Fade';
 
 import './Crypto.css';
 
@@ -15,44 +31,31 @@ const NotFound = () => (
   </div>
 );
 
-const ShareTwitter = () => {
-  const text = `Cryptography Algorithm ${document.title}`;
+const ShareButtons = () => {
+  const title = `Cryptography Algorithm ${document.title}`;
   const url = window.location.href;
-  const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-
-  const openPopup = (url) => {
-    const height = 500;
-    const width = 500;
-    const top = window.innerHeight - height;
-    const left = window.innerHeight - width;
-
-    const newWindow = window.open(url, '_blank',
-      `height=${height}, width=${width},
-      top=${top}, left=${left},
-      location=yes, scrollbars=yes, status=yes`);
-  };
-
+  const iconSize = 48;
   return (
-    <button
-      className="twitter-share-button" type="button"
-      onClick={() => openPopup(shareUrl)}
-      title="Share on Twitter"
-    >
-      <i className="fa fa-twitter" /> Tweet
-    </button>
-  );
-};
-
-const ShareFacebook = () => {
-  function fbs_click() {
-    const u = window.location.href;
-    const t = document.title;
-    window.open(`http://www.facebook.com/sharer.php?u=${encodeURIComponent(u)}&t=${encodeURIComponent(t)}`, 'sharer', 'toolbar=0,status=0,width=626,height=436');
-    return false;
-  }
-
-  return (
-    <a href="http://www.facebook.com/share.php?u=<url>" onClick="return fbs_click()" target="_blank"><img src="ADD_IMAGE_URL_HERE" alt="Share on Facebook" /></a>
+    <div className="tool-share-buttons">
+      <TwitterShareButton url={url} title={title} className="share-button">
+        <Fade up><TwitterIcon size={iconSize} round /></Fade>
+      </TwitterShareButton>
+      <FacebookShareButton url={url} quote={title} className="share-button">
+        <Fade up><FacebookIcon size={iconSize} round /></Fade>
+      </FacebookShareButton>
+      <GooglePlusShareButton url={url} className="share-button">
+        <Fade up><GooglePlusIcon size={iconSize} round /></Fade>
+      </GooglePlusShareButton>
+      <LinkedinShareButton url={url} title={title} className="share-button">
+        <Fade up><LinkedinIcon size={iconSize} round /></Fade>
+      </LinkedinShareButton>
+      <PinterestShareButton url={url} media="/favicon.ico" className="share-button">
+        <Fade up><PinterestIcon size={iconSize} round /></Fade>
+      </PinterestShareButton>
+      <TelegramShareButton url={url} title={title} className="share-button">
+        <Fade up><TelegramIcon size={iconSize} round /></Fade>
+      </TelegramShareButton>
+    </div>
   );
 };
 
@@ -69,6 +72,10 @@ class Crypto extends Component {
   render() {
     const { match } = this.props;
     const defaultAlgo = algorithms[0].algorithms[0];
+
+    const text = `Cryptography Algorithm ${document.title}`;
+    const url = window.location.href;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
 
     return (
       <div className="Crypto container">
@@ -91,8 +98,7 @@ class Crypto extends Component {
               <Route component={NotFound} />
             </Switch>
 
-            <ShareTwitter />
-            <ShareFacebook />
+            <ShareButtons />
           </div>
         </div>
       </div>

@@ -17,8 +17,7 @@ class Contact extends Component {
       google: '//plus.google.com/104401180645424242142',
       facebook: '//www.facebook.com/huynhsamha',
       github: '//github.com/huynhsamha',
-      linkedin: '//linkedin.com/in/huynhsamha/',
-      stackOverflow: '//stackoverflow.com/users/8828489/huynhsamha'
+      linkedin: '//linkedin.com/in/huynhsamha/'
     };
   }
 
@@ -80,13 +79,6 @@ class Contact extends Component {
                     <li>
                       <span className="ic-linkedin">
                         <a href={socials.linkedin}><i className="fa fa-linkedin" /></a>
-                      </span>
-                    </li>
-                  </Zoom>
-                  <Zoom>
-                    <li>
-                      <span className="ic-stack-overflow">
-                        <a href={socials.stackOverflow}><i className="fa fa-stack-overflow" /></a>
                       </span>
                     </li>
                   </Zoom>
