@@ -16,13 +16,14 @@ export const PageNotFound = () => (
 class Body extends Component {
 
   render() {
-    const domain = process.env.PUBLIC_URL;
+    const baseUrl = process.env.PUBLIC_URL;
+
     return (
       <div className="Body">
         <Switch>
-          <Route exact path={`${domain}/`} component={Home} />
-          <Route exact path={`${domain}/contact`} component={Contact} />
-          <Route path={`${domain}/algorithm`} component={Crypto} />
+          <Route exact path={`${baseUrl}/`} component={Home} />
+          <Route exact path={`${baseUrl}/contact`} component={Contact} />
+          <Route path={`${baseUrl}/algorithm`} component={Crypto} />
           <Route component={PageNotFound} />
         </Switch>
       </div>

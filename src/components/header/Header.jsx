@@ -17,21 +17,27 @@ class Header extends Component {
   }
 
   isActiveRoute = (path) => {
+    const baseUrl = process.env.PUBLIC_URL;
     const currentPath = window.location.pathname;
+    const fixedPath = currentPath.replace(baseUrl, '');
+    console.log(baseUrl);
+    console.log(currentPath);
+    console.log(fixedPath);
     // handle specific path /
-    if (path === '/') return currentPath === path;
+    if (path === '/') return fixedPath === '/';
     // handle others
-    return currentPath.indexOf(path) > -1;
+    return fixedPath.indexOf(path) > -1;
   }
 
   render() {
     const { navigations, isActiveRoute } = this;
+    const baseUrl = process.env.PUBLIC_URL;
 
     return (
       <div className="Header">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link to="/" className="navbar-brand">
-            <img src="/favicon.ico" alt="" className="d-inline-block align-top mr-2" width="36" height="36" />
+          <Link to={`${baseUrl}/`} className="navbar-brand">
+            <img src={`${baseUrl}/favicon.ico`} alt="" className="d-inline-block align-top mr-2" width="36" height="36" />
             Cryptography
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-supported-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +50,7 @@ class Header extends Component {
                   key={nav.path}
                   className={`nav-item ${isActiveRoute(nav.path) ? 'active' : ''}`}
                 >
-                  <Link to={nav.path} className="nav-link">{nav.name}</Link>
+                  <Link to={`${baseUrl}${nav.path}`} className="nav-link">{nav.name}</Link>
                 </li>
               ))}
             </ul>

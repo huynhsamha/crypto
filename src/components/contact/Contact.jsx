@@ -50,35 +50,35 @@ class Contact extends Component {
                   <Zoom>
                     <li>
                       <span className="ic-twitter">
-                        <a href={socials.twitter}><i className="fa fa-twitter" /></a>
+                        <a href={socials.twitter} target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter" /></a>
                       </span>
                     </li>
                   </Zoom>
                   <Zoom>
                     <li>
                       <span className="ic-google">
-                        <a href={socials.google}><i className="fa fa-google" /></a>
+                        <a href={socials.google} target="_blank" rel="noopener noreferrer"><i className="fa fa-google" /></a>
                       </span>
                     </li>
                   </Zoom>
                   <Zoom>
                     <li>
                       <span className="ic-facebook">
-                        <a href={socials.facebook}><i className="fa fa-facebook" /></a>
+                        <a href={socials.facebook} target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook" /></a>
                       </span>
                     </li>
                   </Zoom>
                   <Zoom>
                     <li>
                       <span className="ic-github">
-                        <a href={socials.github}><i className="fa fa-github" /></a>
+                        <a href={socials.github} target="_blank" rel="noopener noreferrer"><i className="fa fa-github" /></a>
                       </span>
                     </li>
                   </Zoom>
                   <Zoom>
                     <li>
                       <span className="ic-linkedin">
-                        <a href={socials.linkedin}><i className="fa fa-linkedin" /></a>
+                        <a href={socials.linkedin} target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin" /></a>
                       </span>
                     </li>
                   </Zoom>
