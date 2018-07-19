@@ -1,6 +1,7 @@
 @import '../../styles/core.scss';
 
 .Contact {
+	padding-top: 40px;
 	min-height: calc(100vh - #{$height-header} - #{$height-footer});
 	ul {
 		list-style: none;

@@ -2,6 +2,7 @@
   "name": "crypto",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://huynhsamha.github.io/crypto",
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
@@ -46,7 +47,6 @@
     "email": "huynhsamha@gmail.com",
     "url": "https://github.com/huynhsamha"
   },
-  "homepage": "https://github.com/huynhsamha/crypto",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/huynhsamha/crypto.git"

@@ -2,4 +2,31 @@
 
 .Home {
 	min-height: calc(100vh - #{$height-header} - #{$height-footer});
+	padding-top: 40px;
+	.backgound {
+		text-align: center;
+		height: 100%;
+	}
+	.btn-try {
+		background-color: $color-primary;
+		color: white;
+		outline: none;
+		border: none;
+		padding: 8px 35px;
+		border-radius: 0;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		transition-duration: 0.4s;
+		&:hover, &:active, &:focus {
+			background-color: lighten($color: $color-primary, $amount: 4%);
+			color: white;
+		}
+		$center: 12px;
+		i.left {
+			margin-right: $center;
+		}
+		i.right {
+			margin-left: $center;
+		}
+	}
 }
