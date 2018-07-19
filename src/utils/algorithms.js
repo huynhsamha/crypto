@@ -49,7 +49,7 @@ export default [
     title: 'Encrypt & Decrypt',
     algorithms: [
       { name: 'aes', func: crypto.AES, key: true, decrypt: true,
-        detail: 'Advanced Encryption Standard ' },
+        detail: 'Advanced Encryption Standard' },
       { name: 'tripledes', func: crypto.TripleDES, key: true, decrypt: true,
         detail: 'Triple Data Encryption Standard' },
       { name: 'rc4', func: crypto.RC4, key: true, decrypt: true,
