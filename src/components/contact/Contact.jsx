@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Bounce from 'react-reveal/Bounce';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';

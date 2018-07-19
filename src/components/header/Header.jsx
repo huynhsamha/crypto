@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import './Header.css';
@@ -20,9 +19,6 @@ class Header extends Component {
     const baseUrl = process.env.PUBLIC_URL;
     const currentPath = window.location.pathname;
     const fixedPath = currentPath.replace(baseUrl, '');
-    console.log(baseUrl);
-    console.log(currentPath);
-    console.log(fixedPath);
     // handle specific path /
     if (path === '/') return fixedPath === '/';
     // handle others
@@ -65,8 +61,5 @@ class Header extends Component {
     );
   }
 }
-
-Header.propTypes = {
-};
 
 export default Header;

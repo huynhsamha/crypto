@@ -10,11 +10,9 @@ import Alert from './components/alert/Alert';
 
 class App extends Component {
   render() {
-    const baseUrl = process.env.PUBLIC_URL;
-
     return (
       <div className="App">
-        <Router basename={baseUrl}>
+        <Router>
           <div>
             <Header />
             <Body />

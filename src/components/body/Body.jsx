@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
 import './Body.css';
@@ -10,7 +9,7 @@ import Contact from '../contact/Contact';
 
 export const PageNotFound = () => (
   <div className="Page-not-found text-center">
-    <img src="/img/404.jpg" alt="Page not found" />
+    <img src={`${process.env.PUBLIC_URL}/img/404.jpg`} alt="Page not found" />
   </div>
 );
 class Body extends Component {

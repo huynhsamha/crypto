@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Zoom from 'react-reveal/Zoom';
 import LightSpeed from 'react-reveal/LightSpeed';
 import { Link } from 'react-router-dom';
