@@ -7,6 +7,7 @@ import './Crypto.css';
 import Menu from '../menu/Menu';
 import Algorithm from '../algorithm/Algorithm';
 import ShareButtons from '../share-buttons/ShareButtons';
+import Adsense from '../adsense/Adsense';
 
 import algorithms from '../../utils/algorithms';
 
@@ -49,7 +50,11 @@ class Crypto extends Component {
               <Route component={NotFound} />
             </Switch>
 
+            {/* Share Buttons (Facebook, LinkedIn, Twitter, Google, ...) */}
             <ShareButtons />
+
+            {/* Google Adsense */}
+            <Adsense />
           </div>
         </div>
       </div>
