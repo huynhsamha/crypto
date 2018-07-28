@@ -12,7 +12,7 @@ export default class Adsense extends Component {
         className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client="ca-pub-2949659900148168"
-        data-ad-slot="2949659900148168"
+        data-ad-slot="2086573061"
         data-ad-format="auto"
       />
     );
