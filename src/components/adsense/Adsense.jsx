@@ -8,12 +8,14 @@ export default class Adsense extends Component {
 
   render() {
     return (
+      // huynhsamha.github.io/crypto/algorithm/ads-footer
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client="ca-pub-2949659900148168"
-        data-ad-slot="2086573061"
+        data-ad-slot="5289345117"
         data-ad-format="auto"
+        data-full-width-responsive="true"
       />
     );
   }
