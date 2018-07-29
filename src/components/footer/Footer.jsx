@@ -10,7 +10,7 @@ class Footer extends Component {
         <div className="Footer-content text-center">
           <Fade>
             <div className="py-1">
-              Copyright <i className="fa fa-copyright" /> 2018. All rights reversed.
+              Copyright <i className="fa fa-copyright" /> 2018. All rights reserved.
             </div>
             <div className="py-1">
               <span> Created by {' '}
