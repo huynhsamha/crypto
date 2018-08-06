@@ -30,7 +30,8 @@ class Contact extends Component {
 
             <h2 className="mb-3"><Bounce cascade>About me</Bounce></h2>
             <Fade up>
-              <div className="my-2">I am a science engineer studying at Ho Chi Minh University of Technology in Vietnam.</div>
+              <div className="my-2">I&#x00027;m a science engineer studying at Ho Chi Minh University of Technology in Vietnam.</div>
+              <div className="my-2">I&#x00027;m familiar with Node.JS, ReactJS, AngularJS, MongoDB, SQL, Git, Github, Webpack, Jekyll, AWS, Heroku, Linux, MacOS and more.</div>
               <div className="my-2">This is a web site I created for the purpose of review my knowledge about Cryptography, as well as building websites using React, Redux in conjunction with Bootstrap, jQuery, SASS, SCSS, etc.</div>
               <div className="my-2">My source code for this website is available on <a href="//github.com/huynhsamha/crypto">Github</a>. If you have any problems or issues, please create a new issue or a pull request.</div>
               <div className="my-2">

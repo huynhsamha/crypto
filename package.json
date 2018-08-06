@@ -14,7 +14,7 @@
     "eject": "react-scripts eject",
     "eslint": "node_modules/.bin/eslint --ext=js --ext=jsx src",
     "eslint:fix": "node_modules/.bin/eslint --ext=js --ext=jsx src --fix",
-    "predeploy": "yarn build",
+    "predeploy": "yarn build && cp build/index.html build/404.html",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
