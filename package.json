@@ -12,8 +12,8 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "eslint": "eslint --ext=js --ext=jsx src",
-    "eslint:fix": "eslint --ext=js --ext=jsx src --fix",
+    "eslint": "node_modules/.bin/eslint --ext=js --ext=jsx src",
+    "eslint:fix": "node_modules/.bin/eslint --ext=js --ext=jsx src --fix",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },

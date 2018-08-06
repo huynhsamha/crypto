@@ -3,3 +3,5 @@ coverage/*
 dist/*
 dll/*
 build/*
+public/lib/*
+public/js/*

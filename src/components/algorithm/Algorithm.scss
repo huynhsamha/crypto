@@ -1,22 +1,55 @@
 @import '../../styles/core.scss';
-
 .Algorithm {
-	textarea {
-		min-height: 120px;
-	}
-	.btn-copy {
-		position: absolute;
-		right: 9px;
-		bottom: 9px;
-		font-size: 0.8em;
-		background-color: #afafafd7;
-		outline: none;
-		border: none;
-		color: $color-dark;
-		transition-duration: 0.3s;
-		&:active, &:focus, &:hover {
-			background-color: #d3d3d3 !important;
-			color: $color-dark;
-		}
-	}
+    textarea {
+        min-height: 120px;
+    }
+    .btn-custom {
+        font-size: 0.8em;
+        background-color: #afafafd7;
+        outline: none;
+        border: none;
+        color: $color-dark;
+        transition-duration: 0.3s;
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: #d3d3d3;
+            color: $color-dark;
+				}
+				&.btn-length {
+					&, &:active, &:focus, &:hover {
+						background-color: $color-google;
+						color: white;
+					}
+				}
+				&.btn-copy {
+					background-color: $color-facebook;
+					color: white;
+					&:hover {background-color: lighten($color: $color-facebook, $amount: 15)}
+				}
+				&.btn-encoder {
+					&.active {
+						background-color: $color-primary;
+						color: white;
+					}
+				}
+    }
+    .side-left {
+        position: absolute;
+        display: inline-flex;
+        bottom: 9px;
+        left: 9px;
+        button {
+						margin-right: 2px;
+        }
+    }
+    .side-right {
+        position: absolute;
+				display: inline-flex;
+        right: 9px;
+        bottom: 9px;
+				button {
+					margin-left: 10px;
+				}
+    }
 }
