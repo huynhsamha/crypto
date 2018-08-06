@@ -67,7 +67,6 @@ class Algorithm extends Component {
         }
       } catch (err) {
         console.log(err.message);
-        encryptValue = '';
         decryptValue = '';
       }
     }
