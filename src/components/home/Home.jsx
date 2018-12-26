@@ -27,7 +27,7 @@ class Home extends Component {
           </h1>
           <h5 className="mb-4">
             <LightSpeed bottom cascade>
-              Online, free, fast, accurate, open source and more
+              Online, free, fast, accurate, open source, sharable and more
             </LightSpeed>
           </h5>
           <h6 className="mb-4">
