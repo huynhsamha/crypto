@@ -27,6 +27,11 @@
 					color: white;
 					&:hover {background-color: lighten($color: $color-facebook, $amount: 15)}
 				}
+				&.btn-share {
+					background-color: $color-green;
+					color: white;
+					&:hover {background-color: lighten($color: $color-green, $amount: 5)}
+				}
 				&.btn-encoder {
 					&.active {
 						background-color: $color-primary;

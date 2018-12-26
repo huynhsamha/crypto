@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
-import { enc as cryptoEncoder } from 'crypto-js';
+import copy from 'copy-to-clipboard';
+import crypto, { enc as cryptoEncoder } from 'crypto-js';
 
 import * as actions from '../../redux/actions';
 
 import './Algorithm.css';
+import { getDomain } from '../../utils/url';
+import config from '../../config';
 
 class Algorithm extends Component {
 
@@ -22,7 +24,7 @@ class Algorithm extends Component {
       encoder: cryptoEncoder.Hex
     };
 
-    const { algo } = this.props;
+    const { algo, shareData } = this.props;
     document.title = algo.name.toUpperCase() + (algo.detail ? ` - ${algo.detail}` : '');
 
     this.constants = {
@@ -30,11 +32,51 @@ class Algorithm extends Component {
       'ONE_WAY_WITH_SECRET': 'ONE_WAY_WITH_SECRET',
       'ENCRYPT_DECRYPT': 'ENCRYPT_DECRYPT'
     };
+
+    this.decryptShareData(shareData);
+  }
+
+  decryptShareData = (shareEncryptedData) => {
+    try {
+      console.log(shareEncryptedData);
+      const shareData = JSON.parse(crypto.AES.decrypt(shareEncryptedData, config.shareEncryptKey).toString(cryptoEncoder.Utf8));
+      console.log(shareData);
+      const { data, key, decryptKey } = shareData;
+
+      // Call in constructor, so use `this.state = `
+      this.state = {
+        ...this.state,
+        data, key, decryptKey
+      };
+      console.log(this.state);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   handleOnCopy = () => {
     const { showAlert } = this.props;
-    showAlert('Copied to clipboard');
+    if (copy(this.encryptValue)) {
+      showAlert('Copied to clipboard');
+    } else {
+      showAlert('Error! Please try again');
+    }
+  }
+
+  handleOnShare = () => {
+    // Encode URL to share and copy URL to clipboard
+    const { algo, showAlert } = this.props;
+    const { data, key, decryptKey } = this.state;
+    const shareData = { data, key, decryptKey };
+    const shareEncryptedData = crypto.AES.encrypt(JSON.stringify(shareData), config.shareEncryptKey).toString();
+    const encodedData = encodeURIComponent(shareEncryptedData); // encode special characters (+, /, ..)
+    const url = `${getDomain()}/algorithm/${algo.name}?data=${encodedData}`;
+    console.log(url);
+    if (copy(url)) {
+      showAlert('URL\'ve been copied to clipboard');
+    } else {
+      showAlert('Error! Please try again');
+    }
   }
 
   retrieveType = () => {
@@ -71,6 +113,8 @@ class Algorithm extends Component {
       }
     }
 
+    this.encryptValue = encryptValue;
+
     return (
       <div className="Algorithm">
         <div className="form-group row">
@@ -95,6 +139,7 @@ class Algorithm extends Component {
             <textarea
               className="form-control" rows="6" id="js-user-data"
               placeholder="Add your data for encryption..."
+              defaultValue={data}
               onChange={(e) => { this.setState({ data: e.target.value }); }}
             />
           </Fade>
@@ -108,6 +153,7 @@ class Algorithm extends Component {
               <textarea
                 className="form-control" rows="3" id="js-user-key"
                 placeholder="Add your secret key for encryption..."
+                defaultValue={key}
                 onChange={(e) => { this.setState({ key: e.target.value }); }}
               />
             </Fade>
@@ -140,14 +186,12 @@ class Algorithm extends Component {
               <button className="btn btn-primary btn-sm btn-custom btn-length" type="button">
                 Length: {encryptValue.length}
               </button>
-              <CopyToClipboard
-                text={encryptValue}
-                onCopy={this.handleOnCopy}
-              >
-                <button className="btn btn-primary btn-sm btn-custom btn-copy" type="button">
-                    Copy <i className="fa fa-copy" />
-                </button>
-              </CopyToClipboard>
+              <button className="btn btn-primary btn-sm btn-custom btn-share" type="button" onClick={this.handleOnShare}>
+                Share <i className="fa fa-share-alt" />
+              </button>
+              <button className="btn btn-primary btn-sm btn-custom btn-copy" type="button" onClick={this.handleOnCopy}>
+                Copy <i className="fa fa-copy" />
+              </button>
             </div>
           </Fade>
 
@@ -185,7 +229,12 @@ class Algorithm extends Component {
 
 Algorithm.propTypes = {
   algo: PropTypes.object.isRequired,
+  shareData: PropTypes.string,
   showAlert: PropTypes.func.isRequired
+};
+
+Algorithm.defaultProps = {
+  shareData: null
 };
 
 const mapDispatchToProps = dispatch => ({
