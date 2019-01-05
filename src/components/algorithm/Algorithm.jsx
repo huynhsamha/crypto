@@ -44,6 +44,7 @@ class Algorithm extends Component {
       const { data, key, decryptKey } = shareData;
 
       // Call in constructor, so use `this.state = `
+      // eslint-disable-next-line
       this.state = {
         ...this.state,
         data, key, decryptKey
